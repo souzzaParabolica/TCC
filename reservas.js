@@ -119,3 +119,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // 🧠 Renderiza ícones do Lucide (depois de tudo carregado)
   lucide.createIcons();
 });
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("closeBtn");
+const overlay = document.getElementById("overlay");
+
+function openMenu() {
+  sidebar.classList.remove("-translate-x-full");
+  overlay.classList.remove("hidden");
+
+  // some imediatamente
+  menuBtn.style.display = "none";
+}
+
+function closeMenu() {
+  sidebar.classList.add("-translate-x-full");
+  overlay.classList.add("hidden");
+
+  // reaparecer com animação
+  menuBtn.style.display = "block";
+  menuBtn.classList.add("menuBtn-enter");
+
+  requestAnimationFrame(() => {
+    menuBtn.classList.add("menuBtn-enter-active");
+    menuBtn.classList.remove("menuBtn-enter");
+  });
+}
+
+menuBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);

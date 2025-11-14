@@ -48,10 +48,80 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="reservas.css" />
+
+    <style>
+  .menuBtn-enter {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.9);
+  }
+
+  .menuBtn-enter-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 0.3s ease;
+  }
+</style>
+
   </head>
-  <body class="font-inter">
+  <body class="font-inter flex">
+    <button id="menuBtn" 
+  class="md:hidden fixed top-4 left-4 z-[999] bg-[#658b3a] text-white 
+         p-3 rounded-lg shadow-lg transition-all duration-300">
+  <span data-lucide="menu"></span>
+</button>
+
+
+<div id="overlay" 
+  class="fixed inset-0 bg-black/50 z-[997] hidden">
+</div>
+
+
+
+     <div
+  class="menu nav-bar fixed left-0 top-0 h-full w-[70%] md:w-[15%]
+        flex flex-col justify-between items-center 
+        py-6 shadow-lg z-[998] 
+        bg-white dark:bg-[#1f1f1f]
+        transform -translate-x-full md:translate-x-0
+        transition-transform duration-300"
+  id="sidebar"
+>
+
+<!-- Botão de fechar (só no mobile) -->
+  <button id="closeBtn" class="md:hidden absolute top-4 right-4 text-white p-2">
+    <span data-lucide="x"></span>
+  </button>
+
+  <a class="flex items-center gap-5 w-full px-6" href="calendario.html">
+  <span data-lucide="calendar-days" class="icon w-8 h-8"></span>
+  <p>Calendário</p>
+</a>
+
+
+  <a class="flex items-center gap-5 w-full px-6" href="reservas.html">
+    <span data-lucide="list-checks" class="icon w-8 h-8 cursor-pointer"></span>
+    <p class="leading-none">Reservas</p>
+  </a>
+
+  <a class="flex items-center gap-5 w-full px-6" href="index.html">
+    <span data-lucide="home" class="home w-8 h-8 cursor-pointer"></span>
+    <p class="leading-none">Início</p>
+  </a>
+
+  <a class="flex items-center gap-5 w-full px-6" href="avaliacoes.html">
+    <span data-lucide="activity" class="icon w-8 h-8 cursor-pointer"></span>
+    <p class="leading-none">Avaliações</p>
+  </a>
+
+  <a class="flex items-center gap-5 w-full px-6" href="config.html">
+    <span data-lucide="settings" class="icon w-8 h-8 cursor-pointer"></span>
+    <p class="leading-none">Configurações</p>
+  </a>
+</div>
+
     <!-- Tela cheia -->
-    <div class="fundo flex flex-col h-50 w-screen">
+    <div class="fundo flex flex-col h-50 w-full md:ml-[15%]">
+
       <div class="header flex flex-col justify-between gap-2">
         <h1 class="font-bold icon text-xl flex items-center gap-2 px-4 pt-4">
           <span
@@ -65,7 +135,7 @@
         <p class="subtitle px-4">02 de abril</p>
       </div>
 
-      <div class="space-y-3 overflow-y-auto px-4 relative mb-[6rem]">
+      <div class="space-y-3 overflow-y-auto px-4 relative mb-4">
         <!-- Itens -->
         <div
           class="item prato1 flex items-center p-3 rounded-md shadow mx-auto"
@@ -259,35 +329,7 @@
       </div>
 
       <!-- Bottom nav fixo -->
-      <div
-        class="fixed bottom-0 w-screen item menu nav-bar h-20 flex justify-around items-center mt-4 mb-0 p-2 rounded-t-xl border-0 hover:border-0"
-      >
-      <a href="calendario.html" onclick="window.location.href='calendario.html'; return false;">
-        <span data-lucide="calendar-days" class="icon w-10 h-10 cursor-pointer"></span>
-        </a>
-
-        <a href="reservas.html" onclick="window.location.href='reservas.html'; return false;">
-        <span data-lucide="list-checks" class="icon w-10 h-10 cursor-pointer"></span>
-        </a>
-
-        <a
-          href="home.html"
-          onclick="window.location.href='home.html'; return false;"
-        >
-          <span
-            data-lucide="home"
-            class="home w-10 h-10 text-white cursor-pointer"
-          ></span>
-        </a>
-
-        <a href="avaliacoes.html" onclick="window.location.href='avaliacoes.html'; return false;">
-        <span data-lucide="activity" class="icon w-10 h-10 cursor-pointer"></span>
-        </a>
-
-        <a href="config.html" onclick="window.location.href='config.html'; return false;">
-        <span data-lucide="settings" class="icon w-10 h-10 cursor-pointer"></span>
-        </a>
-    </div>
+     
 
 
     <!-- Toast de Sucesso -->
