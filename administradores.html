@@ -67,7 +67,7 @@
 
     <div class="space-y-3 overflow-y-auto px-4 xl:px-10 2xl:px-10 mb-[6rem]">
       <!-- Itens -->
-       <a
+      <a
         href="aparencia.html"
         onclick="window.location.href='aparencia.html'; return false;"
       >
@@ -146,16 +146,14 @@
       </a>
 
       <div
-          class="item flex flex-col items-center px-3 py-2 rounded-md shadow mx-auto"
-        >
-         <span
+        class="item add-admin flex flex-col items-center px-3 py-2 rounded-md shadow mx-auto cursor-pointer"
+      >
+        <span
           data-lucide="plus"
           class="icon text-[#a6a6a6] w-10 h-10 cursor-pointer"
         ></span>
         <p class="subtitle">Adicionar administrador</p>
-         
-        </div>
-      
+      </div>
     </div>
 
     <!-- Bottom nav fixo -->
@@ -251,30 +249,117 @@
       </ul>
     </div>
 
-    <footer class="hidden xl:flex justify-between items-center px-10 py-5 bg-[#274313] text-white bottom-0 w-full">
-      <img class="cursor-pointer" src="img/VIVABRANCO.PNG" alt="" width="150"/>
+    <footer
+      class="hidden xl:flex justify-between items-center px-10 py-5 bg-[#274313] text-white bottom-0 w-full"
+    >
+      <img class="cursor-pointer" src="img/VIVABRANCO.PNG" alt="" width="150" />
       <div class="desc flex flex-col gap-5 items-center">
         <p class="text-center">
           Precisa de ajuda? <br />
           Fale com o VIVA
         </p>
-        <p class="underline transition-transform duration-300 ease-in-out text-center cursor-pointer hover:scale-105">
+        <p
+          class="underline transition-transform duration-300 ease-in-out text-center cursor-pointer hover:scale-105"
+        >
           Mande sua dúvida para nosso suporte ↗
         </p>
         <p>11 6969-6969.</p>
-        <p class="underline transition-transform duration-300 ease-in-out text-center cursor-pointer hover:scale-105">relacionamento@viva.com.br</p>
-        </div>
+        <p
+          class="underline transition-transform duration-300 ease-in-out text-center cursor-pointer hover:scale-105"
+        >
+          relacionamento@viva.com.br
+        </p>
+      </div>
       <div class="socialMedia flex flex-col gap-3">
         <p class="text-center">Nossas redes sociais</p>
         <div class="socialMediaIcons flex gap-2 items-center justify-center">
-        <span data-lucide="message-circle-plus" class="block w-10 h-10 hover:w-12 hover:h-12 cursor-pointer transition-all duration-300 ease-in-out"></span>
-        <span data-lucide="instagram" class="block w-10 h-10 hover:w-12 hover:h-12 cursor-pointer transition-all duration-300 ease-in-out"></span>
-        <span data-lucide="twitter" class="block w-10 h-10 hover:w-12 hover:h-12 cursor-pointer transition-all duration-300 ease-in-out"></span>
+          <span
+            data-lucide="message-circle-plus"
+            class="block w-10 h-10 hover:w-12 hover:h-12 cursor-pointer transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            data-lucide="instagram"
+            class="block w-10 h-10 hover:w-12 hover:h-12 cursor-pointer transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            data-lucide="twitter"
+            class="block w-10 h-10 hover:w-12 hover:h-12 cursor-pointer transition-all duration-300 ease-in-out"
+          ></span>
+        </div>
       </div>
+    </footer>
+
+   <!-- MODAL ADICIONAR ADMIN -->
+<div
+  id="modalAdmin"
+  class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-end z-50 opacity-0 pointer-events-none transition-all duration-300 ease-in-out"
+>
+  <!-- CONTEÚDO DO MODAL (grudado embaixo) -->
+  <div
+    class="bg-[var(--bg-color)] rounded-t-[25px] p-6 w-[100%] max-w-xl shadow-lg relative"
+  >
+    <!-- BOTÃO FECHAR -->
+    <button
+      id="closeModalBtn"
+      class="absolute top-3 right-3 text-zinc-500 hover:text-zinc-800 dark:hover:text-white"
+    >
+      ✖
+    </button>
+
+    <h2 class="text-lg font-bold mb-4 item-title">Adicionar administrador</h2>
+
+    <form class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1 subtitle"
+          >Nome Completo</label
+        >
+        <input
+          type="text"
+          class="w-full p-2 rounded-md bg-[var(--input-color)] item-title"
+          placeholder="Nome Completo"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1 subtitle"
+          >Email Institucional</label
+        >
+        <input
+          type="email"
+          class="w-full p-2 rounded-md bg-[var(--input-color)] item-title"
+          placeholder="Email institucional"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1 subtitle"
+          >Senha temporária</label
+        >
+        <div class="relative">
+          <input
+            type="password"
+            class="w-full p-2 rounded-md bg-[var(--input-color)] item-title"
+            placeholder="Senha temporária"
+            id="senhaTemp"
+          />
+          <span
+            id="toggleSenha"
+            class="absolute right-3 top-2 cursor-pointer text-zinc-500"
+            data-lucide="eye"
+          ></span>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-[#274313] hover:bg-[#2f5417] text-white py-2 rounded-md transition-all"
+      >
+        Cadastrar
+      </button>
+    </form>
+  </div>
 </div>
 
-      
-    </footer>
     <script src="administradores.js"></script>
     <script src="darkmode.js"></script>
 
