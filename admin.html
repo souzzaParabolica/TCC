@@ -53,73 +53,68 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="admin.css" />
     <style>
-  .menuBtn-enter {
-    opacity: 0;
-    transform: translateY(-6px) scale(0.9);
-  }
+      .menuBtn-enter {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.9);
+      }
 
-  .menuBtn-enter-active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: all 0.3s ease;
-  }
-</style>
+      .menuBtn-enter-active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: all 0.3s ease;
+      }
+    </style>
   </head>
   <body class="font-inter">
-    <button id="menuBtn" 
-  class="md:hidden fixed top-4 left-4 z-[999] bg-[#658b3a] text-white 
-         p-3 rounded-lg shadow-lg transition-all duration-300">
-  <span data-lucide="menu"></span>
-</button>
+    <button
+      id="menuBtn"
+      class="md:hidden fixed top-4 left-4 z-[999] bg-[#658b3a] text-white p-3 rounded-lg shadow-lg transition-all duration-300"
+    >
+      <span data-lucide="menu"></span>
+    </button>
 
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-[997] hidden"></div>
 
-<div id="overlay" 
-  class="fixed inset-0 bg-black/50 z-[997] hidden">
-</div>
+    <div
+      class="menu item m-0 rounded-r-xl nav-bar fixed left-0 top-0 h-full w-[70%] md:w-[15%] flex flex-col justify-between items-center py-6 shadow-lg z-[998] transform -translate-x-full md:translate-x-0 transition-transform duration-300"
+      id="sidebar"
+    >
+      <!-- Botão de fechar (só no mobile) -->
+      <button
+        id="closeBtn"
+        class="md:hidden absolute top-4 right-4 text-white p-2"
+      >
+        <span data-lucide="x"></span>
+      </button>
 
+      <a class="flex items-center gap-5 w-full px-6" href="calendario.html">
+        <span data-lucide="calendar-days" class="icon w-8 h-8"></span>
+        <p class="leading-none item-title text-[1rem]">Calendário</p>
+      </a>
 
+      <a class="flex items-center gap-5 w-full px-6" href="reservas.html">
+        <span
+          data-lucide="list-checks"
+          class="icon w-8 h-8 cursor-pointer"
+        ></span>
+        <p class="leading-none item-title text-[1rem]">Reservas</p>
+      </a>
 
-     <div
-  class="menu nav-bar fixed left-0 top-0 h-full w-[70%] md:w-[15%]
-        flex flex-col justify-between items-center 
-        py-6 shadow-lg z-[998] 
-        bg-white dark:bg-[#1f1f1f]
-        transform -translate-x-full md:translate-x-0
-        transition-transform duration-300"
-  id="sidebar"
->
+      <a class="flex items-center gap-5 w-full px-6" href="index.html">
+        <span data-lucide="home" class="home w-8 h-8 cursor-pointer"></span>
+        <p class="leading-none item-title text-[1rem]">Início</p>
+      </a>
 
-<!-- Botão de fechar (só no mobile) -->
-  <button id="closeBtn" class="md:hidden absolute top-4 right-4 text-white p-2">
-    <span data-lucide="x"></span>
-  </button>
+      <a class="flex items-center gap-5 w-full px-6" href="avaliacoes.html">
+        <span data-lucide="activity" class="icon w-8 h-8 cursor-pointer"></span>
+        <p class="leading-none item-title text-[1rem]">Avaliações</p>
+      </a>
 
-  <a class="flex items-center gap-5 w-full px-6" href="calendario.html">
-  <span data-lucide="calendar-days" class="icon w-8 h-8"></span>
-  <p>Calendário</p>
-</a>
-
-
-  <a class="flex items-center gap-5 w-full px-6" href="reservas.html">
-    <span data-lucide="list-checks" class="icon w-8 h-8 cursor-pointer"></span>
-    <p class="leading-none">Reservas</p>
-  </a>
-
-  <a class="flex items-center gap-5 w-full px-6" href="index.html">
-    <span data-lucide="home" class="home w-8 h-8 cursor-pointer"></span>
-    <p class="leading-none">Início</p>
-  </a>
-
-  <a class="flex items-center gap-5 w-full px-6" href="avaliacoes.html">
-    <span data-lucide="activity" class="icon w-8 h-8 cursor-pointer"></span>
-    <p class="leading-none">Avaliações</p>
-  </a>
-
-  <a class="flex items-center gap-5 w-full px-6" href="config.html">
-    <span data-lucide="settings" class="icon w-8 h-8 cursor-pointer"></span>
-    <p class="leading-none">Configurações</p>
-  </a>
-</div>
+      <a class="flex items-center gap-5 w-full px-6" href="config.html">
+        <span data-lucide="settings" class="icon w-8 h-8 cursor-pointer"></span>
+        <p class="leading-none item-title text-[1rem]">Config</p>
+      </a>
+    </div>
     <!-- Tela cheia -->
     <div class="fundo flex flex-col h-50 md:ml-[15%]">
       <div
@@ -144,7 +139,9 @@
       </div>
     </div>
 
-    <div class="containerPai flex flex-col px-[20px] overflow-x-auto mb-4 md:ml-[15%]">
+    <div
+      class="containerPai flex flex-col px-[20px] overflow-x-auto mb-4 md:ml-[15%]"
+    >
       <div
         class="item w-full gap-2 rounded-[20px] p-4 flex relative flex-col justify-start"
       >
