@@ -76,9 +76,14 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-[997] hidden"></div>
 
     <div
-      class="menu item m-0 rounded-r-xl nav-bar fixed left-0 top-0 h-full w-[70%] md:w-[15%] flex flex-col justify-between items-center py-6 shadow-lg z-[998] transform -translate-x-full md:translate-x-0 transition-transform duration-300"
-      id="sidebar"
-    >
+  id="sidebar"
+  class="menu rounded-r-xl fixed left-0 top-0 h-full w-[70%] md:w-[15%]
+         flex flex-col justify-between items-center py-6 shadow-lg
+         z-[9999] transform -translate-x-full md:translate-x-0
+         transition-transform duration-300
+         bg-white dark:bg-[#333438]"
+>
+
       <!-- Botão de fechar (só no mobile) -->
       <button
         id="closeBtn"
